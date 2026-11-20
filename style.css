@@ -88,6 +88,87 @@ body.unlocked {
 }
 
 /* --------------------------------------------------------------------------
+   4b. MINIMAL THEATRE NOIR PRELOADER (#app-loader)
+   Contained strictly inside #app boundaries (max-width: var(--max-w))
+   -------------------------------------------------------------------------- */
+#app-loader {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--ink);
+  z-index: 99995;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8cqw;
+  transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: all;
+}
+
+#app-loader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-content {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5cqw;
+}
+
+.loader-brand {
+  font-family: 'DM Mono', monospace;
+  font-size: 3.2cqw;
+  letter-spacing: 0.55em;
+  color: var(--scarlet);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.loader-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.loader-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 2.2cqw;
+  letter-spacing: 0.22em;
+  color: rgba(237, 224, 196, 0.5);
+  text-transform: uppercase;
+}
+
+.loader-counter {
+  font-family: 'DM Mono', monospace;
+  font-size: 2.5cqw;
+  letter-spacing: 0.12em;
+  color: var(--cream);
+  font-variant-numeric: tabular-nums;
+}
+
+.loader-track {
+  width: 100%;
+  height: 2px;
+  background: rgba(212, 21, 26, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.loader-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--scarlet);
+  box-shadow: 0 0 10px rgba(209, 54, 58, 0.8);
+  transition: width 0.15s ease-out;
+}
+
+/* --------------------------------------------------------------------------
    5. LANDSCAPE WARNING (Shocking Signal Red)
    -------------------------------------------------------------------------- */
 #landscape-warning {
@@ -136,7 +217,7 @@ body.unlocked {
 
 @media screen and (orientation: landscape) and (max-height: 550px) {
   #landscape-warning { display: flex !important; }
-  #app, #theatre-canvas, #mfab, #curtain-layer, #grain-layer { display: none !important; }
+  #app, #theatre-canvas, #mfab, #curtain-layer, #grain-layer, #app-loader { display: none !important; }
 }
 
 /* --------------------------------------------------------------------------

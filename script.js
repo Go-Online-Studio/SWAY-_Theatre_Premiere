@@ -5,6 +5,109 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // --------------------------------------------------------------------------
+    // 0. MINIMAL ASSET PRELOADER (Intro Video, Hero, & Poster - Max 3s Cap)
+    // --------------------------------------------------------------------------
+    const appLoader = document.getElementById('app-loader');
+    const loaderBar = document.getElementById('loader-bar');
+    const loaderCounter = document.getElementById('loader-counter');
+    const curtainVideoEl = document.getElementById('curtain-video');
+
+    const loaderAssets = [
+        { type: 'image', url: 'images/Premiere_IntroThumb.webp', weight: 25 },
+        { type: 'image', url: 'images/sec1_hero.avif', weight: 35 },
+        { type: 'video', el: curtainVideoEl, weight: 40 }
+    ];
+
+    let currentProgress = 0;
+    let targetProgress = 0;
+    let isLoaderDismissed = false;
+
+    function setVisualProgress(val) {
+        currentProgress = Math.min(100, Math.max(currentProgress, Math.round(val)));
+        if (loaderBar) loaderBar.style.width = `${currentProgress}%`;
+        if (loaderCounter) {
+            const formatted = String(currentProgress).padStart(2, '0');
+            loaderCounter.textContent = `${formatted}%`;
+        }
+    }
+
+    // Smooth animation step
+    const progressInterval = setInterval(() => {
+        if (currentProgress < targetProgress) {
+            setVisualProgress(currentProgress + 1);
+        }
+    }, 20);
+
+    function completeAndDismissLoader() {
+        if (isLoaderDismissed) return;
+        isLoaderDismissed = true;
+        clearInterval(progressInterval);
+        setVisualProgress(100);
+
+        setTimeout(() => {
+            if (appLoader) {
+                appLoader.classList.add('loaded');
+                setTimeout(() => {
+                    appLoader.style.display = 'none';
+                }, 700);
+            }
+        }, 250);
+    }
+
+    // Hard ceiling: max 3 seconds total
+    const maxLoaderTimeout = setTimeout(() => {
+        completeAndDismissLoader();
+    }, 3000);
+
+    // Track loading promises
+    let loadedWeight = 0;
+    function registerAssetProgress(weight) {
+        loadedWeight += weight;
+        targetProgress = Math.min(100, loadedWeight);
+        if (loadedWeight >= 100) {
+            clearTimeout(maxLoaderTimeout);
+            completeAndDismissLoader();
+        }
+    }
+
+    // 1. Preload images
+    loaderAssets.forEach((item) => {
+        if (item.type === 'image') {
+            const img = new Image();
+            img.onload = () => registerAssetProgress(item.weight);
+            img.onerror = () => registerAssetProgress(item.weight);
+            img.src = item.url;
+            if (img.complete) {
+                registerAssetProgress(item.weight);
+            }
+        }
+    });
+
+    // 2. Preload video (Curtain layer intro video)
+    if (curtainVideoEl) {
+        if (curtainVideoEl.readyState >= 2) {
+            registerAssetProgress(40);
+        } else {
+            const onVideoReady = () => {
+                curtainVideoEl.removeEventListener('loadeddata', onVideoReady);
+                curtainVideoEl.removeEventListener('canplay', onVideoReady);
+                curtainVideoEl.removeEventListener('error', onVideoReady);
+                registerAssetProgress(40);
+            };
+            curtainVideoEl.addEventListener('loadeddata', onVideoReady, { once: true });
+            curtainVideoEl.addEventListener('canplay', onVideoReady, { once: true });
+            curtainVideoEl.addEventListener('error', onVideoReady, { once: true });
+            try {
+                curtainVideoEl.load();
+            } catch (err) {
+                console.warn('Video load trigger notice:', err);
+            }
+        }
+    } else {
+        registerAssetProgress(40);
+    }
+
+    // --------------------------------------------------------------------------
     // 1. SCROLL RESTORATION & INITIAL POSITION
     // --------------------------------------------------------------------------
     if ('scrollRestoration' in history) {
