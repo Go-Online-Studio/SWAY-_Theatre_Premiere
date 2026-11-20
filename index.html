@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>SWAYÉ THEATRE PARTY | Vadodara — 28 Nov 2026</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="SWAYÉ THEATRE PARTY — VADODARA">
+    <meta name="description" content="SWAYÉ Presents Theatre Party at Nilamber PVR, Vadodara. Saturday 28 November 2026. Electronic sound, cinema scale, zero alcohol. Limited 50 seats.">
+    <meta name="theme-color" content="#0A0101">
+    <link rel="canonical" href="https://go-online-studio.github.io/Swaye_Invite/">
+
+    <!-- Open Graph / WhatsApp -->
+    <meta property="og:title" content="SWAYÉ THEATRE PARTY — VADODARA">
+    <meta property="og:description" content="Saturday 28 November 2026 · 9:00 PM. Nilamber PVR, Vadodara. Reserve your ticket pass.">
+    <meta property="og:url" content="https://go-online-studio.github.io/Swaye_Invite/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SWAYÉ">
+    <meta property="og:image" content="images/sec1_hero.avif">
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- Critical Preloads -->
+    <link rel="preload" href="images/sec1_hero.avif" as="image" fetchpriority="high">
+    <link rel="preload" href="images/Premiere_IntroThumb.webp" as="image" fetchpriority="high">
+
+    <!-- New Typography: Bebas Neue, Playfair Display, DM Sans, DM Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ══════════════════════════════════════════════
+         LANDSCAPE WARNING (Shocking Signal Red)
+    ══════════════════════════════════════════════ -->
+    <div id="landscape-warning">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <path d="M12 18h.01"></path>
+        </svg>
+        <h2>PLEASE ROTATE YOUR DEVICE</h2>
+        <p>This invitation is crafted exclusively for vertical portrait display.</p>
+    </div>
+
+    <!-- Ambient Audio Track -->
+    <audio id="bg-music" src="images/bg-music.mp3" loop preload="none"></audio>
+
+    <!-- ══════════════════════════════════════════════
+         MAIN APP CONTAINER (Container Context for cqw units)
+    ══════════════════════════════════════════════ -->
+    <div id="app">
+
+        <!-- ══════════════════════════════════════════════
+             INTRO / CURTAIN VIDEO LAYER (Contained inside #app)
+        ══════════════════════════════════════════════ -->
+        <div id="curtain-layer">
+            <video id="curtain-video" src="https://res.cloudinary.com/dticzwbrv/video/upload/v1795167810/Sway%C3%A9_Theatre_Premiere_l2v4tb.mp4" playsinline disablePictureInPicture webkit-playsinline preload="auto" poster="images/Premiere_IntroThumb.webp"></video>
+            <div class="tap-overlay">
+                <div class="curtain-stub">
+                    <div class="stub-label">SWAYÉ THEATRE</div>
+                    <div class="stub-event">OPENS ON</div>
+                    <div class="stub-date">28 NOV</div>
+                    <div class="stub-cta">↑ TAP TO ENTER ↑</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════
+             CANVAS & FILM GRAIN OVERLAYS (Contained inside #app)
+        ══════════════════════════════════════════════ -->
+        <canvas id="theatre-canvas"></canvas>
+        <div id="grain-layer" aria-hidden="true"></div>
+
+        <!-- ══════════════════════════════════════════════
+             RECTANGULAR AUDIO FAB (#mfab) — BOTTOM-RIGHT OF #app
+        ══════════════════════════════════════════════ -->
+        <button id="mfab" aria-label="Toggle Sound" title="Toggle Sound">
+            <svg class="icon-unmuted" viewBox="0 0 24 24">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+            <svg class="icon-muted" viewBox="0 0 24 24">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <line x1="23" y1="9" x2="17" y2="15"></line>
+                <line x1="17" y1="9" x2="23" y2="15"></line>
+            </svg>
+            <span class="audio-label">SOUND</span>
+        </button>
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 1: HERO (Playbill Split)
+        ══════════════════════════════════════════════ -->
+        <section class="hero-banner-sec" id="hero-section">
+            
+            <!-- Top Classification Metadata Bar -->
+            <div class="hero-meta-bar">
+                <div class="meta-classification">
+                    <span class="meta-box">THEATRE</span>
+                    <span class="meta-box">PARTY</span>
+                </div>
+                <div class="meta-presented">PRESENTED BY SWAYÉ</div>
+            </div>
+
+            <!-- Massive Display Title Group -->
+            <div class="hero-title-group">
+                <div class="hero-brand-name">SWAYÉ</div>
+                <div class="hero-presents-line">PRESENTS</div>
+                <h1 class="hero-giant-title">THEATRE<br>PARTY</h1>
+                <div class="hero-location-tag">VADODARA</div>
+            </div>
+
+            <!-- Bottom Date / Venue Strip -->
+            <div class="hero-date-strip">
+                <div class="strip-rule"></div>
+                <div class="strip-info-row">
+                    <div class="strip-block">
+                        <span class="sblock-label">DATE</span>
+                        <span class="sblock-val">28 NOV 2026</span>
+                    </div>
+                    <div class="strip-block">
+                        <span class="sblock-label">DAY</span>
+                        <span class="sblock-val">SATURDAY</span>
+                    </div>
+                    <div class="strip-block">
+                        <span class="sblock-label">ENTRY FROM</span>
+                        <span class="sblock-val">9:00 PM</span>
+                    </div>
+                </div>
+                <div class="strip-venue-line">Nilamber PVR · Vadodara</div>
+                <div class="hero-scroll-cue" id="scroll-cue">
+                    <div class="scroll-tick-line"></div>
+                    <span>Scroll</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 2: EXPERIENCE (Programme Notes)
+        ══════════════════════════════════════════════ -->
+        <section class="experience-sec" id="experience-section">
+            <div class="exp-container">
+                
+                <div class="prog-header">
+                    <div class="prog-eyebrow">— PROGRAMME NOTES</div>
+                    <h2 class="prog-title">What<br>Awaits</h2>
+                </div>
+
+                <div class="prog-list">
+                    
+                    <!-- Item 01 -->
+                    <div class="prog-item">
+                        <div class="prog-num">01</div>
+                        <div class="prog-rule-h"></div>
+                        <div class="prog-item-body">
+                            <h3 class="prog-item-title">LIVE DJ SET</h3>
+                            <p class="prog-item-desc">Electronic music powered by theatre acoustics. DJ performs live beneath crystal chandeliers with full cinema screen visuals behind.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 02 -->
+                    <div class="prog-item">
+                        <div class="prog-num">02</div>
+                        <div class="prog-rule-h"></div>
+                        <div class="prog-item-body">
+                            <h3 class="prog-item-title">THEATRE SEATING</h3>
+                            <p class="prog-item-desc">Deep red velvet auditorium seats. Watch the night unfold from your designated theatre position.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 03 -->
+                    <div class="prog-item">
+                        <div class="prog-num">03</div>
+                        <div class="prog-rule-h"></div>
+                        <div class="prog-item-body">
+                            <h3 class="prog-item-title">LIGHT &amp; DRAMA</h3>
+                            <p class="prog-item-desc">Sweeping spotlights, atmospheric haze, and synchronized visual production crafting a cinematic environment.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 04 -->
+                    <div class="prog-item">
+                        <div class="prog-num">04</div>
+                        <div class="prog-rule-h"></div>
+                        <div class="prog-item-body">
+                            <h3 class="prog-item-title">ZERO ALCOHOL ZONE</h3>
+                            <p class="prog-item-desc">100% alcohol-free. Artisan mocktails and refreshments. Pure energy, no compromise.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 3: TICKET PRICING (Parchment Ticket Stubs)
+        ══════════════════════════════════════════════ -->
+        <section class="pricing-section" id="pricing-section">
+            <div class="pricing-container">
+                
+                <div class="box-office-header">
+                    <span class="bo-mono">THE BOX OFFICE</span>
+                    <h2 class="bo-title">GET<br>YOUR<br>TICKET</h2>
+                    <div class="bo-rule"></div>
+                    <div class="bo-subtext">Strictly limited — 50 seats only.<br>Early Bird ₹500 · Regular ₹600</div>
+                </div>
+
+                <!-- Swiper with 2 Physical Ticket Stubs -->
+                <div class="swiper pricing-swiper">
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Stub 1: Early Bird -->
+                        <div class="swiper-slide">
+                            <div class="ticket-stub" onclick="selectTier('500')">
+                                <div class="stub-header-bar">
+                                    <span class="sh-event">SWAYÉ · THEATRE PARTY</span>
+                                    <span class="sh-serial">#SY-EB / ADMIT ONE</span>
+                                </div>
+                                <div class="stub-tear-line"></div>
+                                <div class="stub-body">
+                                    <div class="stub-pass-type">EARLY BIRD</div>
+                                    <div class="stub-price"><span class="curr">₹</span>500</div>
+                                    <div class="stub-price-note">Per Person · Limited Slots</div>
+                                    <div class="stub-perks">
+                                        <div class="stub-perk">Full Theatre Entry</div>
+                                        <div class="stub-perk">Auditorium Seating</div>
+                                        <div class="stub-perk">1 Artisan Mocktail Included</div>
+                                    </div>
+                                    <button type="button" class="stub-cta-btn">Claim Early Bird</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stub 2: Regular -->
+                        <div class="swiper-slide">
+                            <div class="ticket-stub" onclick="selectTier('600')">
+                                <div class="stub-header-bar">
+                                    <span class="sh-event">SWAYÉ · THEATRE PARTY</span>
+                                    <span class="sh-serial">#SY-REG / ADMIT ONE</span>
+                                </div>
+                                <div class="stub-tear-line"></div>
+                                <div class="stub-body">
+                                    <div class="stub-pass-type">REGULAR TICKET</div>
+                                    <div class="stub-price"><span class="curr">₹</span>600</div>
+                                    <div class="stub-price-note">Per Person · Standard Entry</div>
+                                    <div class="stub-perks">
+                                        <div class="stub-perk">Full Theatre Entry</div>
+                                        <div class="stub-perk">Auditorium Seating</div>
+                                        <div class="stub-perk">1 Artisan Mocktail Included</div>
+                                    </div>
+                                    <button type="button" class="stub-cta-btn">Claim Regular</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <!-- Live Remaining Counter -->
+                <div class="seat-counter">
+                    <span class="sc-mono">SEATS REMAINING</span>
+                    <span class="sc-number">50</span>
+                    <div class="sc-bar"><div class="sc-fill"></div></div>
+                    <span class="sc-note">Early Bird closes when slots fill</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 4: LOCATION (Venue Dispatch)
+        ══════════════════════════════════════════════ -->
+        <section class="location-sec" id="location-section">
+            <div class="location-container">
+                <div class="loc-label">📍 THE VENUE</div>
+                <h2 class="loc-venue-name">NILAMBER<br>PVR</h2>
+                <div class="loc-rule"></div>
+                <div class="loc-address">Vadodara, Gujarat</div>
+                <div class="loc-date-line">
+                    <span>SAT 28 NOV 2026</span>
+                    <span class="loc-sep">·</span>
+                    <span>9:00 PM — 2:00 AM</span>
+                </div>
+                <div class="map-wrap">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.3854743789476!2d73.13627447474929!3d22.301258942878794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc8488e3a241b%3A0xc3b84177d6baadbe!2sNilamber%20Prime!5e0!3m2!1sen!2sin!4v1788513079403!5m2!1sen!2sin" width="100%" height="auto" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 5: RSVP FORM (Guest Registry)
+        ══════════════════════════════════════════════ -->
+        <section class="rsvp-sec" id="rsvp-container">
+            <div class="rsvp-container">
+                
+                <div class="rsvp-header">
+                    <div class="rsvp-eyebrow">GUEST REGISTRY</div>
+                    <h2 class="rsvp-title">RESERVE<br>YOUR SEAT</h2>
+                    <p class="rsvp-subtext">Submit your details. No payment collected here — confirmation and payment link arrive via WhatsApp.</p>
+                </div>
+
+                <form id="rsvp-form" novalidate>
+                    <!-- 1. Ticket Tier Select -->
+                    <div class="form-field">
+                        <label class="field-label" for="fticket">Select Ticket</label>
+                        <select id="fticket" class="field-select">
+                            <option value="500">Early Bird — ₹500 / Person</option>
+                            <option value="600" selected>Regular Ticket — ₹600 / Person</option>
+                        </select>
+                    </div>
+
+                    <!-- 2. Full Name -->
+                    <div class="form-field">
+                        <label class="field-label" for="fname">Full Name</label>
+                        <input type="text" id="fname" class="field-input" placeholder="e.g. Maya Verma" autocomplete="name">
+                        <div class="invalid-feedback">Please enter your full name.</div>
+                    </div>
+
+                    <!-- 3. Instagram -->
+                    <div class="form-field">
+                        <label class="field-label" for="finsta">Instagram Profile Link</label>
+                        <input type="text" id="finsta" class="field-input" placeholder="e.g. instagram.com/maya.verma or @maya.verma" autocomplete="username">
+                        <div class="invalid-feedback">Please enter a valid Instagram handle (e.g. @username) or link.</div>
+                    </div>
+
+                    <!-- 4. WhatsApp Number -->
+                    <div class="form-field">
+                        <label class="field-label" for="fphone">WhatsApp Number</label>
+                        <input type="tel" id="fphone" class="field-input" placeholder="e.g. +91 94565 65656 or 9456565656" autocomplete="tel">
+                        <div class="invalid-feedback">Please enter a valid 10-digit Indian mobile number (+91 optional).</div>
+                    </div>
+
+                    <!-- Summary Bar -->
+                    <div class="checkout-summary-bar">
+                        <span class="checkout-label">ESTIMATED TOTAL</span>
+                        <span class="checkout-price" id="total-price">₹600</span>
+                    </div>
+                    <p class="concierge-note">*No payment collected here. Pass confirmation and payment link will be sent directly to your WhatsApp.</p>
+
+                    <!-- Terms Checkbox -->
+                    <div class="tnc-agreement-row" id="tnc-agreement-row">
+                        <label style="display:flex; align-items:center; gap:2.5cqw; cursor:pointer;">
+                            <input type="checkbox" id="agree-terms" class="tnc-checkbox" required>
+                            <div class="tnc-box-custom">
+                                <svg viewBox="0 0 12 10" fill="none"><polyline points="1.5 5 4.5 8 10.5 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                            <span class="tnc-prompt-text">
+                                I agree to the <a href="#tnc-section" class="tnc-inline-link">House Rules &amp; Protocols</a>
+                            </span>
+                        </label>
+                        <div class="tnc-error-cue">Please agree to the House Rules to proceed.</div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-invitation-btn" id="submit-btn">RESERVE TICKET</button>
+
+                    <!-- Notices -->
+                    <div class="confirmation-notice" id="confirm-msg" style="display: none;">
+                        ✓ <strong>RESERVATION REGISTERED!</strong> Your seat request has been noted. Our team will contact you via WhatsApp with confirmation and pass payment details.
+                    </div>
+                    <div class="confirmation-notice error-notice" id="error-msg" style="display: none;">
+                        ⚠️ <strong>SUBMISSION FAILED.</strong> Please check your connection or try again.
+                    </div>
+                </form>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 6: TERMS & CONDITIONS (14 House Rules Gazette)
+        ══════════════════════════════════════════════ -->
+        <section class="tnc-sec" id="tnc-section">
+            <div class="tnc-container">
+                
+                <div class="tnc-header">
+                    <div class="tnc-eyebrow">OFFICIAL RULES &amp; PROTOCOLS</div>
+                    <h2 class="tnc-title">HOUSE<br>RULES</h2>
+                    <div class="tnc-org-line">SWAYÉ Theatre Party · Vadodara · 28 Nov 2026</div>
+                    <div class="tnc-rule-line"></div>
+                </div>
+
+                <div class="tnc-scroll-wrapper">
+                    <div class="tnc-scroll-box" id="tnc-scroll-box">
+                        <div class="tnc-clause-list">
+                            <div class="tnc-clause">
+                                <span class="tnc-num">01</span>
+                                <p class="tnc-text">Smoking is strictly prohibited inside the venue.</p>
+                            </div>
+                            <div class="tnc-clause">
+                                <span class="tnc-num">02</span>
+                                <p class="tnc-text">Outside food and beverages are strictly prohibited.</p>
+                            </div>
+                            <div class="tnc-clause">
+                                <span class="tnc-num">03</span>
+                                <p class="tnc-text">Commercial cameras and recording equipment are not allowed without prior press credentials.</p>
+                            </div>
+                            <div class="tnc-clause">
+                                <span class="tnc-num">04</span>
+                                <p class="tnc-text">Any illegal substances, weapons, or hazardous materials will result in immediate expulsion and legal handover.</p>
+                            </div>
+                            <div class="tnc-clause">
+                                <span class="tnc-num">05</span>
+                                <p class="tnc-text">Attendees must be 18 years or older with valid government-issued photo ID at entry.</p>
+                            </div>
+                            <div class="tnc-clause">
+                                <span class="tnc-num">06</span>
+                                <p class="tnc-text">Tickets are strictly non-refundable and non-transferable under any circumstances.</p>
+                            </div>
+                            <div class="tnc-clause">
+                                <span class="tnc-num">07</span>
+                                <p class="tnc-text">Respectful conduct is mandatory. Harassment, verbal abuse, or aggressive behavior will result in zero-tolerance eviction without refund.</p>
+                            </div>
+                            <div class="tnc-clause">
+                                <span class="tnc-num">08</span>
+                                <p class="tnc-text">Venue security reserves the right to conduct thorough bag and person checks at admission.</p>
+                            </div>
+                            <div class="tnc-clause">
+                                <span class="tnc-num">09</span>
+                                <p class="tnc-text">The organizers reserve the right of admission and may refuse entry to individuals exhibiting intoxication or disorderly conduct.</p>
+                            </div>
+                            <div class="tnc-clause">
+                                <span class="tnc-num">10</span>
+                                <p class="tnc-text">SWAYÉ is an alcohol-free event. Alcoholic beverages are strictly banned across all venue premises.</p>
+                            </div>
+                            <div class="tnc-clause">
+                                <span class="tnc-num">11</span>
+                                <p class="tnc-text">Guests are fully responsible for their personal belongings; the organizers and venue management accept no liability for loss or damage.</p>
+                            </div>
+                            <div class="tnc-clause">
+                                <span class="tnc-num">12</span>
+                                <p class="tnc-text">Entering the event constitutes consent to be photographed and filmed for official promotional recaps and media.</p>
+                            </div>
+                            <div class="tnc-clause">
+                                <span class="tnc-num">13</span>
+                                <p class="tnc-text">Emergency exits, staircases, and backstage corridors must be kept completely clear at all times.</p>
+                            </div>
+                            <div class="tnc-clause">
+                                <span class="tnc-num">14</span>
+                                <p class="tnc-text">Event schedules, line-ups, and production arrangements are subject to reasonable adjustments by event management.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tnc-scroll-fade" id="tnc-scroll-fade">
+                        <span class="tnc-fade-prompt">SCROLL FOR MORE RULES ↓</span>
+                    </div>
+                </div>
+
+                <!-- Pricing Reminder Block -->
+                <div class="pricing-reminder-bar">
+                    <div class="pbar-block">
+                        <div class="pbar-label">EARLY BIRD</div>
+                        <div class="pbar-price">₹500</div>
+                        <div class="pbar-note">Limited Slots</div>
+                    </div>
+                    <div class="pbar-divider"></div>
+                    <div class="pbar-block">
+                        <div class="pbar-label">REGULAR</div>
+                        <div class="pbar-price">₹600</div>
+                        <div class="pbar-note">Per Person</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 7: CLOSING CREDITS / FOOTER
+        ══════════════════════════════════════════════ -->
+        <footer class="footer-sec" id="footer-section">
+            <!-- Main content block -->
+            <div class="footer-container">
+                <div class="footer-fin-mark">— FIN —</div>
+                <h3 class="footer-closing-line">NOT A THEATRE.<br>NOT A CLUB.<br>A PREMIÈRE<br>TO REMEMBER.</h3>
+                <div class="footer-thin-rule"></div>
+                <div class="footer-event-recap">
+                    <div class="recap-line"><span class="rl-label">EVENT</span><span class="rl-val">SWAYÉ THEATRE PARTY</span></div>
+                    <div class="recap-line"><span class="rl-label">DATE</span><span class="rl-val">SAT 28 NOV 2026</span></div>
+                    <div class="recap-line"><span class="rl-label">TIME</span><span class="rl-val">9:00 PM — 2:00 AM</span></div>
+                    <div class="recap-line"><span class="rl-label">VENUE</span><span class="rl-val">NILAMBER PVR, VADODARA</span></div>
+                </div>
+                <div class="footer-thin-rule"></div>
+                <div class="footer-zero-line">ZERO ALCOHOL · ZERO BORING</div>
+                <div class="footer-whisper">Something is coming.</div>
+            </div>
+            <!-- Credit pinned to bottom -->
+            <p class="footer-credit">Designed by <a href="https://invitebox.in/" target="_blank" rel="noreferrer">Invite Box</a></p>
+        </footer>
+
+    </div>
+
+    <!-- Swiper.js Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
