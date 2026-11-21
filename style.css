@@ -7,21 +7,31 @@
    1. COLOR SYSTEM & CSS TOKENS
    -------------------------------------------------------------------------- */
 :root {
-  --ink:          #0A0101;        /* near-black with deep red undertone */
-  --paper:        #F5EDD8;        /* aged parchment for ticket stubs */
-  --blood:        #8C0A0A;        /* deep arterial red */
-  --scarlet:      #d1363a;        /* bright signal red */
-  --ember:        #E05B2B;        /* warm orange-red for accents */
-  --cream:        #EDE0C4;        /* warm off-white headline and body text */
-  --mist:         rgba(237, 224, 196, 0.55); /* dim cream */
-  --rule:         rgba(212, 21, 26, 0.65);   /* red hairline rules */
-  --max-w:        480px;
+  --ink: #0A0101;
+  /* near-black with deep red undertone */
+  --paper: #F5EDD8;
+  /* aged parchment for ticket stubs */
+  --blood: #8C0A0A;
+  /* deep arterial red */
+  --scarlet: #d1363a;
+  /* bright signal red */
+  --ember: #E05B2B;
+  /* warm orange-red for accents */
+  --cream: #EDE0C4;
+  /* warm off-white headline and body text */
+  --mist: rgba(237, 224, 196, 0.55);
+  /* dim cream */
+  --rule: rgba(212, 21, 26, 0.65);
+  /* red hairline rules */
+  --max-w: 480px;
 }
 
 /* --------------------------------------------------------------------------
    2. GLOBAL RESETS
    -------------------------------------------------------------------------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -79,12 +89,29 @@ body.unlocked {
 }
 
 @keyframes grainShift {
-  0%   { background-position: 0 0; }
-  20%  { background-position: -40px -60px; }
-  40%  { background-position: 60px -20px; }
-  60%  { background-position: -20px 50px; }
-  80%  { background-position: 50px 30px; }
-  100% { background-position: 0 0; }
+  0% {
+    background-position: 0 0;
+  }
+
+  20% {
+    background-position: -40px -60px;
+  }
+
+  40% {
+    background-position: 60px -20px;
+  }
+
+  60% {
+    background-position: -20px 50px;
+  }
+
+  80% {
+    background-position: 50px 30px;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -210,14 +237,36 @@ body.unlocked {
 }
 
 @keyframes rotatePhone {
-  0%, 15% { transform: rotate(0deg); }
-  45%, 65% { transform: rotate(90deg); }
-  95%, 100% { transform: rotate(0deg); }
+
+  0%,
+  15% {
+    transform: rotate(0deg);
+  }
+
+  45%,
+  65% {
+    transform: rotate(90deg);
+  }
+
+  95%,
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @media screen and (orientation: landscape) and (max-height: 550px) {
-  #landscape-warning { display: flex !important; }
-  #app, #theatre-canvas, #mfab, #curtain-layer, #grain-layer, #app-loader { display: none !important; }
+  #landscape-warning {
+    display: flex !important;
+  }
+
+  #app,
+  #theatre-canvas,
+  #mfab,
+  #curtain-layer,
+  #grain-layer,
+  #app-loader {
+    display: none !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -327,8 +376,16 @@ body.unlocked {
 }
 
 @keyframes ctaBlink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -367,7 +424,9 @@ body.unlocked #mfab {
   }
 }
 
-#mfab:active { transform: scale(0.95); }
+#mfab:active {
+  transform: scale(0.95);
+}
 
 #mfab svg {
   stroke: var(--scarlet);
@@ -399,9 +458,17 @@ body.unlocked #mfab {
   color: rgba(237, 224, 196, 0.4);
 }
 
-#mfab .icon-muted { display: none; }
-#mfab.muted .icon-unmuted { display: none; }
-#mfab.muted .icon-muted { display: block; }
+#mfab .icon-muted {
+  display: none;
+}
+
+#mfab.muted .icon-unmuted {
+  display: none;
+}
+
+#mfab.muted .icon-muted {
+  display: block;
+}
 
 /* --------------------------------------------------------------------------
    9. SECTION 1 — HERO: FILM POSTER / PLAYBILL SPLIT
@@ -423,7 +490,7 @@ body.unlocked #mfab {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 1, 1, 0.856) 0%, rgba(10, 1, 1, 0.144) 20%, transparent 45%, rgba(10, 1, 1, 0.377) 70%, rgb(10 1 1 / 75%) 100% );
+  background: linear-gradient(180deg, rgba(10, 1, 1, 0.856) 0%, rgba(10, 1, 1, 0.144) 20%, transparent 45%, rgba(10, 1, 1, 0.377) 70%, rgb(10 1 1 / 75%) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -492,13 +559,13 @@ body.unlocked #mfab {
   margin-bottom: 0.5cqw;
   padding: 1cqw 2cqw;
   /* From https://css.glass */
-background: rgba(24, 24, 24, 0.432);
-border-radius: 8px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(4px);
--webkit-backdrop-filter: blur(4px);
-border: 1px solid rgba(255, 255, 255, 0.17);
-align-self: flex-start;
+  background: rgba(24, 24, 24, 0.432);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  align-self: flex-start;
 }
 
 
@@ -549,25 +616,32 @@ h1.hero-giant-title::after {
 }
 
 @keyframes glitchRed {
-  0%, 88%, 100% {
+
+  0%,
+  88%,
+  100% {
     transform: translate(0, 0);
     opacity: 0;
   }
+
   89% {
     transform: translate(-3px, 1px);
     opacity: 0.7;
     clip-path: inset(20% 0 50% 0);
   }
+
   91% {
     transform: translate(2px, -2px);
     opacity: 0.8;
     clip-path: inset(60% 0 10% 0);
   }
+
   93% {
     transform: translate(-1px, 2px);
     opacity: 0.5;
     clip-path: inset(10% 0 75% 0);
   }
+
   95% {
     transform: translate(0, 0);
     opacity: 0;
@@ -575,20 +649,26 @@ h1.hero-giant-title::after {
 }
 
 @keyframes glitchCream {
-  0%, 86%, 100% {
+
+  0%,
+  86%,
+  100% {
     transform: translate(0, 0);
     opacity: 0;
   }
+
   87% {
     transform: translate(3px, -1px);
     opacity: 0.6;
     clip-path: inset(40% 0 30% 0);
   }
+
   90% {
     transform: translate(-2px, 1px);
     opacity: 0.7;
     clip-path: inset(15% 0 65% 0);
   }
+
   92% {
     transform: translate(0, 0);
     opacity: 0;
@@ -681,8 +761,17 @@ h1.hero-giant-title::after {
 }
 
 @keyframes tickPulse {
-  0%, 100% { width: 4cqw; opacity: 0.4; }
-  50%      { width: 8cqw; opacity: 1; }
+
+  0%,
+  100% {
+    width: 4cqw;
+    opacity: 0.4;
+  }
+
+  50% {
+    width: 8cqw;
+    opacity: 1;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -812,7 +901,8 @@ h3.prog-item-title {
   background: url('images/sec3_pricing.avif') center center / cover no-repeat;
   container-type: inline-size;
   padding: 6cqw 5cqw 8cqw;
-  overflow: visible;           /* allow swiper cards to bleed sideways */
+  overflow: visible;
+  /* allow swiper cards to bleed sideways */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -824,7 +914,7 @@ h3.prog-item-title {
   position: absolute;
   inset: 0;
   background: linear-gradient(rgb(10 1 1) 0%, rgba(10, 1, 1, 0.145) 20%, transparent 45%, rgba(10, 1, 1, 0.376) 70%, rgb(10 1 1) 100%),
-              linear-gradient(90deg, rgb(10 1 1 / 78%) 0%, rgb(10 1 1 / 35%) 55%, rgb(10 1 1 / 0%) 100%);
+    linear-gradient(90deg, rgb(10 1 1 / 78%) 0%, rgb(10 1 1 / 35%) 55%, rgb(10 1 1 / 0%) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -962,8 +1052,13 @@ h2.bo-title {
   border-radius: 50%;
 }
 
-.stub-tear-line::before { left: -1.8cqw; }
-.stub-tear-line::after  { right: -1.8cqw; }
+.stub-tear-line::before {
+  left: -1.8cqw;
+}
+
+.stub-tear-line::after {
+  right: -1.8cqw;
+}
 
 .stub-body {
   padding: 3cqw 3.5cqw 3.2cqw;
@@ -1266,7 +1361,8 @@ h2.rsvp-title {
   margin-bottom: 1.5cqw;
 }
 
-.field-input, .field-select {
+.field-input,
+.field-select {
   width: 100%;
   background: transparent;
   border: none;
@@ -1280,15 +1376,18 @@ h2.rsvp-title {
   transition: border-color 0.25s ease;
 }
 
-.field-input:focus, .field-select:focus {
+.field-input:focus,
+.field-select:focus {
   border-bottom-color: var(--scarlet);
 }
 
-.field-input.is-valid, .field-select.is-valid {
+.field-input.is-valid,
+.field-select.is-valid {
   border-bottom-color: #3d9970 !important;
 }
 
-.field-input.is-invalid, .field-select.is-invalid {
+.field-input.is-invalid,
+.field-select.is-invalid {
   border-bottom-color: #cc3333 !important;
 }
 
@@ -1309,8 +1408,8 @@ h2.rsvp-title {
   margin-top: 1cqw;
 }
 
-.field-input.is-invalid ~ .invalid-feedback,
-.field-select.is-invalid ~ .invalid-feedback {
+.field-input.is-invalid~.invalid-feedback,
+.field-select.is-invalid~.invalid-feedback {
   display: block;
 }
 
@@ -1381,11 +1480,11 @@ h2.rsvp-title {
   stroke: var(--cream);
 }
 
-.tnc-checkbox:checked ~ .tnc-box-custom {
+.tnc-checkbox:checked~.tnc-box-custom {
   background: var(--scarlet);
 }
 
-.tnc-checkbox:checked ~ .tnc-box-custom svg {
+.tnc-checkbox:checked~.tnc-box-custom svg {
   opacity: 1;
 }
 
@@ -1458,7 +1557,9 @@ h2.rsvp-title {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .confirmation-notice {
@@ -1600,8 +1701,17 @@ h2.tnc-title {
 }
 
 @keyframes fadePromptPulse {
-  0%, 100% { opacity: 0.6; transform: translateY(0); }
-  50% { opacity: 1; transform: translateY(2px); }
+
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(2px);
+  }
 }
 
 .tnc-clause-list {
@@ -1690,7 +1800,8 @@ h2.tnc-title {
   padding: 10cqw calc(7cqw + env(safe-area-inset-right, 0px)) max(6cqw, calc(env(safe-area-inset-bottom, 0px) + 3cqw)) calc(7cqw + env(safe-area-inset-left, 0px));
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* main content top/center, credit bottom */
+  justify-content: space-between;
+  /* main content top/center, credit bottom */
   align-items: stretch;
 }
 
@@ -1699,12 +1810,11 @@ h2.tnc-title {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
-    var(--ink) 0%,
-    rgba(10, 1, 1, 0.72) 25%,
-    rgba(10, 1, 1, 0.55) 50%,
-    rgba(10, 1, 1, 0.72) 75%,
-    var(--ink) 100%
-  );
+      var(--ink) 0%,
+      rgba(10, 1, 1, 0.72) 25%,
+      rgba(10, 1, 1, 0.55) 50%,
+      rgba(10, 1, 1, 0.72) 75%,
+      var(--ink) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -1717,7 +1827,8 @@ h2.tnc-title {
   align-items: center;
   gap: 4cqw;
   flex: 1;
-  justify-content: center;    /* vertically center main block */
+  justify-content: center;
+  /* vertically center main block */
   text-align: center;
 }
 
@@ -1765,12 +1876,14 @@ h3.footer-closing-line {
 
 .rl-label {
   font-family: 'DM Mono', monospace;
-  font-size: 1.5cqw;
+  font-size: 2.2cqw;
   letter-spacing: 0.22em;
-  color: var(--scarlet);
+  color: #ff4747;
   text-transform: uppercase;
   min-width: 14cqw;
   flex-shrink: 0;
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95), 0 0 10px rgba(255, 71, 71, 0.5);
 }
 
 .rl-val {
